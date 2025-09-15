@@ -1,33 +1,50 @@
 
 # CleanArchitectureDemo
 
-This project is a RESTful API built with .NET 8 demonstrating CRUD operations using Clean Architecture. The main entity is **Course**, representing a course management system.
+Este proyecto es una API RESTful desarrollada con .NET 8 que ejemplifica operaciones CRUD siguiendo los principios de Clean Architecture. La entidad principal es **Course**, utilizada para representar un sistema de gestión de cursos.
 
-## Project Structure
+## 🧱 Estructura del Proyecto
 
-- **Domain**: Contains the `Course` entity and `ICourseRepository` interface.
-- **Application**: Contains DTOs, Commands, Queries, and Handlers.
-- **Infrastructure**: Implements repository and database context.
-- **WebAPI**: Exposes HTTP endpoints via `CoursesController`.
+El proyecto está dividido en las siguientes capas:
 
-## How to Run
+### 1. Domain
+- Contiene la entidad `Course`.
+- Define la interfaz `ICourseRepository`.
 
-1. Open `CleanArchitectureDemo.sln` in Visual Studio.
-2. Configure the database connection in `AppDbContext`.
-3. Run the WebAPI project.
+### 2. Application
+- Contiene los `DTOs`, `Commands`, `Queries` y `Handlers`.
+- Orquesta la lógica de aplicación y casos de uso.
 
-## Endpoints
+### 3. Infrastructure
+- Implementa `ICourseRepository`.
+- Define el contexto de base de datos `AppDbContext` usando Entity Framework Core.
 
-- `GET /api/courses` - Retrieve all courses.
-- `GET /api/courses/{id}` - Retrieve a course by ID.
-- `POST /api/courses` - Create a new course.
-- `PUT /api/courses/{id}` - Update an existing course.
-- `DELETE /api/courses/{id}` - Delete a course.
+### 4. WebAPI (Presentación)
+- Expone los endpoints HTTP a través del controlador `CoursesController`.
 
-## Requirements
+## 🚀 Cómo ejecutar
 
+1. Abre `CleanArchitectureDemo.sln` en Visual Studio.
+2. Configura la cadena de conexión en `AppDbContext`.
+3. Ejecuta el proyecto `CleanArchitectureDemo.WebAPI`.
+
+## 📬 Endpoints disponibles
+
+- `GET /api/courses` → Obtiene todos los cursos.
+- `GET /api/courses/{id}` → Obtiene un curso por ID.
+- `POST /api/courses` → Crea un nuevo curso.
+- `PUT /api/courses/{id}` → Actualiza un curso existente.
+- `DELETE /api/courses/{id}` → Elimina un curso.
+
+## 🧪 Pruebas
+Puedes probar los endpoints utilizando herramientas como:
+- Swagger (si está habilitado en el proyecto)
+- Postman
+- curl
+
+## 📋 Requisitos
 - .NET 8 SDK
-- Visual Studio 2022 or later
+- Visual Studio 2022 o superior
 
-## Author
-Generated as part of the diploma program "Modernization of Software Architecture and Cloud".
+## 👨‍🎓 Autor
+Proyecto generado como parte del diplomado **Modernization of Software Architecture and Cloud**.
